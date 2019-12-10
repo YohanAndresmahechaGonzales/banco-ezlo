@@ -1,0 +1,87 @@
+# banco-ezlo
+mis primeros codigos en lua
+function dinero()
+
+print("saldo actual: $",sal)
+print("cuanto dinero desea retirar: ")
+reti=io.read("*n")
+resto=sal-reti
+
+
+print("contando dinero\n gracias por utilizar nuestro servicio \n saldo: ",resto)
+print("cerrar sesion escribe 1")
+cerrarretiro=io.read("*n")
+
+  if cerrarretiro==1 then
+    principal()
+  end
+
+
+
+
+end
+
+sal=1200000
+function principal()
+intenu = 5
+intenc =5
+
+print("******************** Banco de ezlo innovation ********************","\n")
+
+print("elige un numero segun tu opcion \n")
+
+print("cuenta de ahorro a la mano (1)")
+print("cuenta corriente (2) ")
+print("retiro de giro (3)\n")
+
+print("por favor digite un numero que corresponda a tu elecciona: ")
+opciones=io.read("*n")
+
+
+
+  if opciones==1 then
+    print("por favor digite su usuario: ")
+    usu=io.read("*n")
+    while usu~=1006460056 and intenu~=0 do
+      print("intentos",intenu)
+       print("usuario incorrecto \nintenta de nuevo")
+      usu=io.read("*n")
+      intenu=intenu-1
+    end
+     if intenu==0 then
+        print("olvidaste tu usuario")
+        principal()
+      end
+     if usu==1006460056 then
+         print("por favor digite su contraseña")
+         contra=io.read("*n")
+       while contra~=123456 and intenc~=0 do
+          print("intentos",intenc)
+          print("\n contraseña incorrecta \n porfavor intenta nuevamente")
+          contra=io.read("*n")
+          intenc=intenc-1
+       end
+         if intenc==0 then
+           print("olvidaste tu contraseña\n")
+           principal()
+         end
+       if contra==123456 then
+            print("bienvenido yohan andres mahecha gonzales\n saldo :     $",sal)
+            print("numero de cuenta : 1011245789654\n cuenta:      corriente")
+            print("\n\n\n\ncerrar sesion    escribe 1 \n deseas retirar dinero  escribe 2")
+            cerrar=io.read("*n")
+       end 
+  
+       
+  if cerrar==1 then
+          principal()
+  elseif cerrar==2 then
+         dinero()
+  end
+       
+ 
+end
+end
+end
+
+principal()
